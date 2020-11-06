@@ -7,7 +7,7 @@ const Home: FC = () => {
   return (
     <>
       <Head>
-        <title>TODO List</title>
+        <title>Lista de Tarefas | DevBSB</title>
       </Head>
 
       <Box>
