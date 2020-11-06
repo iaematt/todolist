@@ -1,6 +1,7 @@
-import React, { FC } from "react";
-import { AppProps } from "next/app";
-import Head from "next/head";
+import React, { FC } from 'react'
+import Head from 'next/head'
+
+import { Box, Input, Button, List } from '@components/ui'
 
 const Home: FC = () => {
   return (
@@ -9,9 +10,14 @@ const Home: FC = () => {
         <title>TODO List</title>
       </Head>
 
-      <main></main>
-    </>
-  );
-};
+      <Box>
+        <Input name="task" placeholder="Digite a tarefa e pressione enter..." />
+        <Button>Adicionar tarefa</Button>
 
-export default Home;
+        <List />
+      </Box>
+    </>
+  )
+}
+
+export default Home

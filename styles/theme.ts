@@ -1,8 +1,11 @@
 const theme = {
   colors: {
     background: '#18191a',
-    text: '#e3e3e3',
-    primary: '#ed2a4c'
+    text: '#222222',
+    primary: '#ed2a4c',
+    box: '#eaeaea',
+    input: '#dadada',
+    buttonColor: '#eaeaea'
   }
 }
 
