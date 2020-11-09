@@ -5,8 +5,6 @@ import { Box, Input, Button, List, Footer } from '@components/ui'
 import { TodoProvider, useTodo } from '@contexts/Todo'
 
 const Home: FC = () => {
-  const { value, setValue } = useTodo()
-
   return (
     <TodoProvider>
       <Head>
@@ -15,12 +13,7 @@ const Home: FC = () => {
       </Head>
 
       <Box>
-        <Input
-          value={value}
-          setValue={setValue}
-          name="task"
-          placeholder="Digite a tarefa e pressione enter..."
-        />
+        <Input name="task" placeholder="Digite a tarefa e pressione enter..." />
         <Button>Adicionar tarefa</Button>
 
         <List />
