@@ -3,14 +3,21 @@ import React, { FC } from 'react'
 import { Container } from './styles'
 import { Item } from '@components/ui'
 
+import { useTodo } from '@contexts/Todo'
+
 const List: FC = () => {
+  const { tasks } = useTodo()
+
   return (
     <Container>
-      <Item complete={true} task="Estudar" />
-      <Item complete={false} task="Ler livro" />
-      <Item complete={false} task="Lavar roupas" />
-      <Item complete={false} task="Assistir seriados" />
-      <Item complete={false} task="Trabalhar" />
+      {tasks?.map((item, index) => (
+        <Item
+          key={index}
+          index={item.id}
+          complete={item.completed}
+          task={item.name}
+        />
+      ))}
     </Container>
   )
 }

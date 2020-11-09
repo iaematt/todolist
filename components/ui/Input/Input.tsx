@@ -1,4 +1,4 @@
-import React, { FC } from 'react'
+import React, { FC, FormEvent } from 'react'
 
 import { Container } from './styles'
 
@@ -6,11 +6,26 @@ interface Props {
   name: string
   type?: string
   placeholder?: string
+  value: string | number | undefined
+  setValue(event: FormEvent<HTMLInputElement>): void
 }
 
-const Input: FC<Props> = ({ name, type = 'text', placeholder }) => {
+const Input: FC<Props> = ({
+  name,
+  type = 'text',
+  placeholder,
+  value,
+  setValue
+}) => {
   return (
-    <Container name={name} type={type} placeholder={placeholder} required />
+    <Container
+      value={value}
+      onChange={event => setValue(event.target.value)}
+      name={name}
+      type={type}
+      placeholder={placeholder}
+      required
+    />
   )
 }
 
